@@ -38,5 +38,9 @@ const router = new VueRouter({
   ],
   mode: 'history'
 })
+  const originalPush = VueRouter.prototype.push
+  VueRouter.prototype.replace = function replace(location) {
+    return originalPush.call(this, location).catch(err => err)
+  }
 
 export default router

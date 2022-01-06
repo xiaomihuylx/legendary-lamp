@@ -2,12 +2,14 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        'views': '@/views',
+        // 脚手架3中起别名可以用@代替src  脚手架2 不行
         'components': '@/components',
+        'views': '@/views',
         'network': '@/network',
-        'common': '@/common',
         'assets': '@/assets',
+        'common': '@/common'
+
       }
     }
-  }
+ }
 }
